@@ -24,6 +24,8 @@ module "cloudtrail" {
   s3_bucket_name = module.logging_bucket.bucket_id
   kms_key_arn    = module.kms.key_arn
 
+  cloudwatch_log_group_arn = module.cloudwatch_alerts.log_group_arn
+
   tags = var.tags
 }
 
@@ -61,3 +63,4 @@ module "athena" {
 
   tags = var.tags
 }
+
